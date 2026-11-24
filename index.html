@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Watch Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+        <h2>ALBERTO <span>WATCHES</span></h2>
+        <p>Visitors: <span id="visitors">0</span></p>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#technology">Technology</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#prices">Price List</a>
+        <a href="#store">Store Locator</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>TIMELESS ELEGANCE</h1>
+        <p>Discover the finest collection of luxury watches.</p>
+        <a href="#products" class="btn">Explore Collection</a>
+    </div>
+</section>
+
+<section id="products">
+    <h2 class="heading">Our Watch Collection</h2>
+    <p class="subtitle">Choose your perfect timepiece</p>
+
+    <div class="categories">
+        <button onclick="filterProducts('All',this)" class="active">All</button>
+        <button onclick="filterProducts('Luxury',this)">Luxury</button>
+        <button onclick="filterProducts('Vintage',this)">Vintage</button>
+        <button onclick="filterProducts('Smart',this)">Smart Watches</button>
+        <button onclick="filterProducts('Classic',this)">Classic</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section id="technology" class="cream">
+    <h2 class="heading">Our Technology</h2>
+
+    <div class="tech-grid">
+        <div class="tech-card">
+            <h3>⚙ Automatic Movement</h3>
+            <p>Precision mechanical watch technology.</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>🔋 Eco-Drive</h3>
+            <p>Light-powered watch technology.</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>💎 Sapphire Crystal</h3>
+            <p>Premium crystal for excellent durability.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2 class="heading">Our Gallery</h2>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600" alt="Watch">
+        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600" alt="Watch">
+    </div>
+</section>
+
+<section id="prices" class="cream">
+    <h2 class="heading">Price List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Watch Name</th>
+                <th>Category</th>
+                <th>Price (PKR)</th>
+            </tr>
+        </thead>
+        <tbody id="priceTable"></tbody>
+    </table>
+</section>
+
+<section id="store">
+    <h2 class="heading">Store Locator</h2>
+    <p class="subtitle">Visit Alberto Watch Company</p>
+    <p class="center">Address: Add your actual store address here.</p>
+    <div class="center">
+        <a href="https://www.google.com/maps" class="btn">Find Our Store</a>
+    </div>
+</section>
+
+<section id="about" class="cream">
+    <h2 class="heading">About Us</h2>
+    <p class="about-text">
+        Alberto Watch Company is a full-service watch repair,
+        appraisal and retail store. We offer luxury timepieces
+        and first-class customer service. Our collection includes
+        Rolex, Michael Kors, Citizen Eco-Drive, Bulova and more.
+    </p>
+</section>
+
+<section id="contact">
+    <h2 class="heading">Contact Us</h2>
+
+    <div class="contact-grid">
+        <div>
+            <h3>Get In Touch</h3>
+            <p>Email: info@albertowatches.com</p>
+            <p>Phone: Add your phone number</p>
+            <p>Address: Add your business address</p>
+        </div>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h2>ALBERTO WATCHES</h2>
+    <p>© 2026 Alberto Watch Company. All Rights Reserved.</p>
+    <p><a href="#home">Home</a> | <a href="#products">Products</a> |
+    <a href="#contact">Contact</a> | <a href="#about">About Us</a></p>
+    <a href="#home">Back to Top ↑</a>
+</footer>
+
+<div class="ticker">
+    <marquee id="ticker">Welcome to Alberto Watch Company</marquee>
+</div>
+
+<!-- Product Details Popup -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <img id="modalImage" src="" alt="Watch">
+        <h2 id="modalName"></h2>
+        <p id="modalCategory"></p>
+        <p id="modalDescription"></p>
+        <h3 id="modalPrice"></h3>
+        <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
